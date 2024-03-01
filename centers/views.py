@@ -47,7 +47,7 @@ class CenterReviewDetailUpdateDeleteAPIView(APIView):
 class CenterListDetailUpdateDeleteAPIView(APIView):
     permission_classes = [IsAuthenticated]
 
-    def get(self, request, pk):
+    def get(self, request):
         centers = Center.objects.all()
         paginator = PageNumberPagination()
         page_obj = paginator.paginate_queryset(centers, request)
@@ -108,7 +108,3 @@ class CenterDetailView(LoginRequiredMixin, View):
         }
         return render(request, 'center/center_detail.html', context=context)
 
-
-from django.shortcuts import render
-
-# Create your views here.

@@ -17,7 +17,7 @@ class CenterReviewSerializer(serializers.ModelSerializer):
     center_id=serializers.IntegerField(write_only=True)
     class Meta:
         model = CenterReview
-        fields = ['comment','star_given','user','centers','user_id','center_id']
+        fields = ['comment','star_given','user','center','user_id','center_id']
 
     def validate(self,data):
         comment=data.get('comment')
